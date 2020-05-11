@@ -1,17 +1,12 @@
 package validate
 
 import (
-	"fmt"
-	"io/ioutil"
 	"log"
-
-	"gopkg.in/yaml.v2"
-
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("Lab 3 Microservices", func() {
+var _ = Describe("Lab 5 Observability", func() {
 	var failMessage string
 
 	BeforeEach(func() {
