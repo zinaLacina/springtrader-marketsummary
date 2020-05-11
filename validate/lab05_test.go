@@ -20,7 +20,7 @@ var _ = Describe("Lab 3 Microservices", func() {
 
     Context("Step 4", func() {
 		It("should have a HasCurrency.java file", func() {
-			failMessage = "HasCurrency.java Doesn't Exist or is in the wrong location\n"
+			failMessage = "HasCurrency.java doesn't exist or is in the wrong location\n"
 			Expect("../src/main/java/org/springframework/nanotrader/web/controller/HasCurrency.java").To(BeAnExistingFile(), failMessage)
 		})
 	})
@@ -32,14 +32,3 @@ var _ = Describe("Lab 3 Microservices", func() {
 		}
 	})
 })
-
-func expectYamlToParse(path string) interface{} {
-	var output interface{}
-	file, err := ioutil.ReadFile(path)
-	failMessage := fmt.Sprintf("File at the path, %s, cannot be found. File may be in wrong location or misnamed.\n", path)
-	Expect(err).To(BeNil(), failMessage)
-	err = yaml.Unmarshal([]byte(file), &output)
-	failMessage = fmt.Sprintf("File at the path, %s, could not be parsed as YAML.\n Error: %s\n", path, err)
-	Expect(err).To(BeNil(), failMessage)
-	return output
-}
