@@ -18,3 +18,4 @@ deploy:
           nodeEnv: "{{.NODE_ENV}}"
         setValues:
           hpa.enabled: true
+          canary.enabled: true
